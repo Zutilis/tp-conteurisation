@@ -8,4 +8,4 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-CMD ["sh", "-c", "cp -r /app/dist/. /frontend-dist"]
+ENTRYPOINT ["sh", "-c", "cp -r /app/dist/. /frontend-dist && echo 'Frontend OK.'"]

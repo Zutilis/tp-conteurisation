@@ -7,10 +7,6 @@ sed -i "s|# DB_DATABASE=laravel|DB_DATABASE=tp_conteneurisation|" .env
 sed -i "s|# DB_USERNAME=root|DB_USERNAME=root|" .env
 sed -i "s|# DB_PASSWORD=|DB_PASSWORD=root|" .env
 
-until php artisan db:show > /dev/null 2>&1; do
-  sleep 2
-done
-
 php artisan key:generate --no-ansi
 php artisan migrate --force
 
